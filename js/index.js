@@ -10,23 +10,30 @@ const addTask = add => {
     const taskLi = document.createElement('li');
     const removeButton = document.createElement('button');
     const eraseButton = document.createElement('button');
+    const cancelButton = document.createElement('button');
 
     removeButton.innerText = '削除';
     eraseButton.innerText = '完了';
+    cancelButton.innerText = '取り消し';
 
-    removeButton.addEventListener('click', a => {
+    eraseButton.addEventListener('click', () => {
+      taskLi.classList.add('line');
+    });
+
+    cancelButton.addEventListener('click' , () => {
+      taskLi.classList.remove('line');
+    });
+    
+    removeButton.addEventListener('click', () => {
       const removeTask = removeButton.closest('li');
       list.removeChild(removeTask);
-    });
-    eraseButton.addEventListener('click', a => {
-      const eraseTask = removeButton.closest('li');
-      taskLi.classList.add('line');
     });
 
 // liの追加処理
     taskLi.textContent = add;
-    taskLi.append(removeButton);
     taskLi.append(eraseButton);
+    taskLi.append(cancelButton);
+    taskLi.append(removeButton);
     list.insertBefore(taskLi, list.firstChild);
   }
 };

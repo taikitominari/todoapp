@@ -15,7 +15,6 @@
 .line{
   text-decoration: line-through;
 }
-
 .main_wrapper {
   height: 100%;
   background-color: burlywood;
@@ -61,4 +60,9 @@
   font-size: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #fff;
+}
+
+#list li button {
+  margin-left: 20px;
+  padding: 8px 20px;
 }
