@@ -16,17 +16,27 @@ const addTask = add => {
     eraseButton.innerText = '完了';
     cancelButton.innerText = '取り消し';
 
+// 完了処理
     eraseButton.addEventListener('click', () => {
       taskLi.classList.add('line');
     });
-
+// 取り消し処理
     cancelButton.addEventListener('click' , () => {
       taskLi.classList.remove('line');
     });
-    
+// 削除機能
     removeButton.addEventListener('click', () => {
-      const removeTask = removeButton.closest('li');
-      list.removeChild(removeTask);
+
+      const remove = function() {
+        const removeTask = removeButton.closest('li');
+        list.removeChild(removeTask);
+      };
+      function confirmed(fn) {
+        if(window.confirm("項目を削除してもよろしいですか？")) {
+          fn();
+        }
+      };
+      confirmed(remove);
     });
 
 // liの追加処理

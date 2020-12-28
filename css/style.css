@@ -1,3 +1,7 @@
+body {
+  height: 100%;
+  background-color: burlywood;
+}
 .main_title {
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -15,10 +19,7 @@
 .line{
   text-decoration: line-through;
 }
-.main_wrapper {
-  height: 100%;
-  background-color: burlywood;
-}
+
 .container {
   margin-left: 15%;
   margin-right: 15%;
@@ -63,6 +64,6 @@
 }
 
 #list li button {
-  margin-left: 20px;
-  padding: 8px 20px;
+  margin-left: 10px;
+  padding: 5px 10px;
 }
