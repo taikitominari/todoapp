@@ -4,7 +4,7 @@ const add = document.getElementById('add_button');
 const list = document.getElementById('list');
 let text = document.getElementById("text");
 
-
+// 項目追加処理
 const addTask = add => {
   if (add !== "") {
     const taskLi = document.createElement('li');
@@ -16,17 +16,16 @@ const addTask = add => {
     eraseButton.innerText = '完了';
     cancelButton.innerText = '取り消し';
 
-// 完了処理
+  // 完了処理
     eraseButton.addEventListener('click', () => {
       taskLi.classList.add('line');
     });
-// 取り消し処理
+  // 取り消し処理
     cancelButton.addEventListener('click' , () => {
       taskLi.classList.remove('line');
     });
-// 削除機能
+  // 削除機能
     removeButton.addEventListener('click', () => {
-
       const remove = function() {
         const removeTask = removeButton.closest('li');
         list.removeChild(removeTask);
